@@ -10,6 +10,13 @@ import javax.validation.Payload;
 
 import com.ccolleto.messagedelivery.custom.annotation.validator.NotBeforeThanNowValidator;
 
+/**
+ * Validates that the provided date is not before the current server time and
+ * returns an error in case of wrong information provided
+ * 
+ * @author ccolleto
+ *
+ */
 @Constraint(validatedBy = NotBeforeThanNowValidator.class)
 @Target({ ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
