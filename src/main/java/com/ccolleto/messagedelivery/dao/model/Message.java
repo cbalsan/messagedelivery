@@ -27,9 +27,11 @@ public class Message {
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	private LocalDateTime deliveryDate;
 
-	@JsonIgnore
-	private boolean isDelivered;
+	private boolean delivered;
 
+	private LocalDateTime deliveredAt;
+
+	@JsonIgnore
 	public ObjectId getId() {
 		return id;
 	}
@@ -54,11 +56,22 @@ public class Message {
 		this.deliveryDate = deliveryDate;
 	}
 
+	@JsonIgnore
 	public boolean isDelivered() {
-		return isDelivered;
+		return delivered;
 	}
 
 	public void setDelivered(boolean delivered) {
-		isDelivered = delivered;
+		this.delivered = delivered;
 	}
+
+	@JsonIgnore
+	public LocalDateTime getDeliveredAt() {
+		return deliveredAt;
+	}
+
+	public void setDeliveredAt(LocalDateTime deliveredAt) {
+		this.deliveredAt = deliveredAt;
+	}
+
 }
