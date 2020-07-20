@@ -1,4 +1,4 @@
-package com.ccolleto.messagedelivery.model;
+package com.ccolleto.messagedelivery.dao.model;
 
 import java.time.LocalDateTime;
 
@@ -18,10 +18,10 @@ public class Message {
 	@Id
 	private ObjectId id;
 
-	@NotEmpty
+	@NotEmpty(message = "Text must not be empty")
 	private String text;
 
-	@NotNull
+	@NotNull(message = "DeliveryDate must not be null")
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
 	@NotBeforeThanNow
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")

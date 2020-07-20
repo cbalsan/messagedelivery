@@ -1,6 +1,6 @@
 package com.ccolleto.messagedelivery.dao;
 
-import com.ccolleto.messagedelivery.model.Message;
+import com.ccolleto.messagedelivery.dao.model.Message;
 
 public interface MessageDAO {
 

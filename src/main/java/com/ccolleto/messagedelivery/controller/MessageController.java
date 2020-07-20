@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ccolleto.messagedelivery.model.Message;
+import com.ccolleto.messagedelivery.dao.model.Message;
 import com.ccolleto.messagedelivery.service.MessageService;
 
 @RestController

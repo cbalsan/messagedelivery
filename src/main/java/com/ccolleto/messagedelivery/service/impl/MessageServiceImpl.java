@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ccolleto.messagedelivery.dao.MessageDAO;
-import com.ccolleto.messagedelivery.model.Message;
+import com.ccolleto.messagedelivery.dao.model.Message;
 import com.ccolleto.messagedelivery.service.MessageService;
 
 @Service

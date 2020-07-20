@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.ccolleto.messagedelivery.dao.MessageDAO;
-import com.ccolleto.messagedelivery.model.Message;
+import com.ccolleto.messagedelivery.dao.model.Message;
 
 @Repository
 public class MessageDAOImpl implements MessageDAO {
