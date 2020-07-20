@@ -1,28 +1,31 @@
 package com.ccolleto.messagedelivery.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import com.ccolleto.messagedelivery.custom.annotation.NotBeforeThanNow;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-//@Entity
 public class Message {
 
 	@Id
 	private ObjectId id;
 
 	@NotEmpty
-	@NotNull
 	private String text;
 
-	@NotEmpty
 	@NotNull
-	private Date deliveryDate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+	@NotBeforeThanNow
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+	private LocalDateTime deliveryDate;
 
 	@JsonIgnore
 	private boolean isDelivered;
@@ -43,11 +46,11 @@ public class Message {
 		this.text = text;
 	}
 
-	public Date getDeliveryDate() {
+	public LocalDateTime getDeliveryDate() {
 		return deliveryDate;
 	}
 
-	public void setDeliveryDate(Date deliveryDate) {
+	public void setDeliveryDate(LocalDateTime deliveryDate) {
 		this.deliveryDate = deliveryDate;
 	}
 

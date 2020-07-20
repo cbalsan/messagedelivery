@@ -3,7 +3,6 @@ package com.ccolleto.messagedelivery.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,16 +13,13 @@ import com.ccolleto.messagedelivery.service.MessageService;
 
 @RestController
 @RequestMapping("/message")
-public class MessageControler {
+public class MessageController {
 
 	@Autowired
 	private MessageService service;
 
 	@PostMapping("")
-	public void add(@Valid @RequestBody Message message, BindingResult bindingResult) {
-		if (bindingResult.hasErrors()) {
-			System.out.println("error");
-		}
+	public void add(@Valid @RequestBody Message message) {
 		service.add(message);
 	}
 }
